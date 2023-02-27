@@ -11,13 +11,12 @@ public class CountBomb : MonoBehaviour
     public TextMeshProUGUI bombcount;
 
     //Å‘å’l‚Ì•ÏX
-    private int Bomb;
+    public static int Bomb;
 
-    public CountBird countbird;
 
     public void Start()
     {
-        Bomb = 3;
+        Bomb = 1;
 
         UpdateLabel();
     }
@@ -35,7 +34,7 @@ public class CountBomb : MonoBehaviour
 
     public void OnClickPlus()
     {
-        if (Bomb < 3)
+        if (Bomb < CountBird.Bird)
         {
             Bomb++;
         }

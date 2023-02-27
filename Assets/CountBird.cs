@@ -11,7 +11,7 @@ public class CountBird : MonoBehaviour
     public TextMeshProUGUI birdcount;
 
     //Å‘å’l‚Ì•ÏX
-    public int Bird;
+    public static int Bird;
 
     public void Start()
     {
@@ -22,7 +22,7 @@ public class CountBird : MonoBehaviour
 
     public void OnClickMinus()
     {
-        if(Bird > 3 )
+        if(Bird > CountBomb.Bomb )
         {
             Bird--;
         }
