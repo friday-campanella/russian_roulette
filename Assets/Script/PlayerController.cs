@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private List<int> bombIndexList;
     public GameObject OutPanel;
     public GameObject SafePanel;
+    //public AudioClip karaageSE;
+    //public AudioSource karaageAudio;
 
     void Start()
     {
@@ -17,7 +19,7 @@ public class PlayerController : MonoBehaviour
         SetButtonEvents();
         SetBombs();
     }
-    // ”š’e‚ğƒ‰ƒ“ƒ_ƒ€‚Éİ’u‚·‚é
+    // ï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Éİ’uï¿½ï¿½ï¿½ï¿½
     void SetBombs()
     {
         int buttonCount = CountBird.Bird;
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < CountBomb.Bomb; i++)
         {
             int randomIndex = Random.Range(0, buttonCount);
-            // d•¡‚µ‚È‚¢‚æ‚¤‚Éƒ`ƒFƒbƒN
+            // ï¿½dï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½Éƒ`ï¿½Fï¿½bï¿½N
             while (bombIndexList.Contains(randomIndex))
             {
                 randomIndex = Random.Range(0, buttonCount);
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
             bombIndexList.Add(randomIndex);
         }
     }
-    // Šeƒ{ƒ^ƒ“‚ÉƒNƒŠƒbƒNƒCƒxƒ“ƒg‚ğİ’è‚·‚é
+    // ï¿½eï¿½{ï¿½^ï¿½ï¿½ï¿½ÉƒNï¿½ï¿½ï¿½bï¿½Nï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½İ’è‚·ï¿½ï¿½
     void SetButtonEvents()
     {
         for (int i = 0; i < CountBird.Bird; i++)
@@ -44,20 +46,20 @@ public class PlayerController : MonoBehaviour
             button.onClick.AddListener(() => OnButtonClick(buttonIndex, button));
         }
     }
-    // ƒ{ƒ^ƒ“‚ªƒNƒŠƒbƒN‚³‚ê‚½‚Ìˆ—
+    // ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
     void OnButtonClick(int buttonIndex, Button button)
     {
         if (bombIndexList.Contains(buttonIndex))
         {
-            // ”š’e‚ªƒNƒŠƒbƒN‚³‚ê‚½ê‡
-            button.gameObject.SetActive(false); // ƒ{ƒ^ƒ“‚ğ”ñƒAƒNƒeƒBƒu‚É‚·‚éiÁ‚·j
+            // ï¿½ï¿½ï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ê‡
+            button.gameObject.SetActive(false); // ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Nï¿½eï¿½Bï¿½uï¿½É‚ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½j
             OutPanel.SetActive(true);
             bombCount++;
             if(bombCount == bombIndexList.Count)
             {
                 gameOverPanel.SetActive(true);
             }
-            //ÅŒã‚Ì”š’e‚ª‰Ÿ‚³‚ê‚½‚Æ‚«AƒQ[ƒ€I—¹ƒpƒlƒ‹‚ğ•\¦‚·‚é
+            //ï¿½ÅŒï¿½Ì”ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½Aï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½pï¿½lï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             /*  if (bombIndexList.Contains(buttonIndex) <0)
               {
                   gameOverPanel.SetActive(true);
@@ -66,9 +68,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // ”š’eˆÈŠO‚ªƒNƒŠƒbƒN‚³‚ê‚½ê‡
-            // button.gameObject.SetActive(false); //Á‚·ê‡
-            button.interactable = false; // ƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN•s”\‚É‚·‚éê‡
+            // ï¿½ï¿½ï¿½eï¿½ÈŠOï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ê‡
+            // button.gameObject.SetActive(false); //ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+            button.interactable = false; // ï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½sï¿½\ï¿½É‚ï¿½ï¿½ï¿½ê‡
             SafePanel.SetActive(true);
         }
     }
